@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_extensions',
 
     'post.apps.PostConfig',
+    'ticket.apps.TicketConfig',
 ]
 
 MIDDLEWARE = [
