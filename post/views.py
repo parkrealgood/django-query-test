@@ -14,11 +14,9 @@ class PostViewSet(GenericViewSet):
     """
     serializer_class = PostRetrieveSerializer
     permission_classes = (AllowAny,)
-    queryset = Post.objects.all()
 
     def get_queryset(self):
-        queryset = self.get_queryset()
-        queryset = queryset.prefetch_related(
+        queryset = Post.objects.prefetch_related(
             Prefetch(
                 'subscribers',
                 queryset=Subscriber.objects.prefetch_related(
